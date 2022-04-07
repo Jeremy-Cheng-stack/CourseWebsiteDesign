@@ -1,0 +1,78 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="section">
+    <div class="section-title">
+        <h2>Tutorial Sections</h2>
+        <hr>
+    </div>
+    <div class="section-content">
+        <h4>Please go the tutorial section that you signed up for on ROSI.</h4>
+    </div>
+</div>
+<div class="section">
+    <div class="section-title">
+        <h2>Tutorial Exercises</h2>
+        <hr>
+    </div>
+    <div class="section-content">
+        <h4>This section contains the tutorial exercises.</h4>
+        <h4>Tutorials are held every week. The first tutorial week is week 2. Please make use of this valuable resource!</h4>
+    </div>
+    <div class="section-content">
+        <div class="table">
+                <div class="row">
+                    <div class="cell">Week</div>
+                    <div class="cell"> Lab </div>
+                    <div class="cell"> Solutions</div>
+                </div>
+                <div class="row">
+                    <div class="cell">2</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='dummy.pdf') }}">Python, Command line</a> </div>
+                    <div class="cell"> None</div>
+                </div>
+                <div class="row">
+                    <div class="cell">3</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='dummy.pdf') }}">Handout</a></div>
+                    <div class="cell"> Solutions</div>
+                </div>
+                <div class="row">
+                    <div class="cell">4</div>
+                    <div class="cell"> <a href="{{ url_for('static', filename='dummy.pdf') }}">Handout university.sql</a> </div>
+                    <div class="cell"> <a href="{{ url_for('static', filename='dummy.pdf') }}">query_solns</a></div>
+                </div>
+                <div class="row">
+                    <div class="cell">5</div>
+                    <div class="cell"> <a href="{{ url_for('static', filename='dummy.pdf') }}">Handout</a> </div>
+                    <div class="cell"> <a href="{{ url_for('static', filename='dummy.pdf') }}">Solns</a></div>
+                </div>
+                <div class="row">
+                    <div class="cell">6</div>
+                    <div class="cell"> <a href="{{ url_for('static', filename='dummy.pdf') }}">Handout</a> </div>
+                    <div class="cell"> <a href="{{ url_for('static', filename='dummy.pdf') }}">Solns</a></div>
+                </div>
+                <div class="row">
+                    <div class="cell">7</div>
+                    <div class="cell"> <a href="{{ url_for('static', filename='dummy.pdf') }}">Handout</a> </div>
+                    <div class="cell"> </div>
+                </div>
+                <div class="row">
+                    <div class="cell">8</div>
+                    <div class="cell"> <a href="{{ url_for('static', filename='dummy.pdf') }}">Handout</a> </div>
+                    <div class="cell"> </div>
+                </div>
+                <div class="row">
+                    <div class="cell">9</div>
+                    <div class="cell"> <a href="{{ url_for('static', filename='dummy.pdf') }}">Handout</a> </div>
+                    <div class="cell"> </div>
+                </div>
+                <div class="row">
+                    <div class="cell">10</div>
+                    <div class="cell"> <a href="{{ url_for('static', filename='dummy.pdf') }}">W3 tutorial </a>Work through the tutorial for jQuery up until jQuery Remove.</div>
+                    <div class="cell"> </div>
+                </div>
+        </div>
+    </div>
+</div>   
+
+{% endblock %}

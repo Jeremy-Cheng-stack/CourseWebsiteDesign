@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+                <div>{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    <form class="login-text" action="http://127.0.0.1:5000/login" method = "post">
+        <h4>Login</h4>
+        <br>
+        <label for="username">Username</label>
+        <textarea type="text" id="Username" name="Username"></textarea>
+    
+        <label for="Password">Password</label>
+        <textarea id="text" name="Password"></textarea>
+        <br>
+        <button type="Login">Login</button>
+    </form>
+{% endwith %}
+
+{% endblock %}

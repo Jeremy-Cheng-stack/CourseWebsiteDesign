@@ -1,0 +1,71 @@
+{% extends "template.html" %}
+{% block content %}
+
+
+<div class="section">
+    <div class="section-title">
+        <h2>Overview</h2>
+        <hr>
+    </div>
+    <div class="section-content">
+        <h4>Here are the assignment and exercise topics, weights, and due dates. I will be posting the exercise and assignment handouts here. All exercises and assignments will be submitted on <a href=" https://markus.utsc.utoronto.ca/cscb20w22">MarkUs</a>.</h4>
+    </div>
+</div>
+<div class="section">
+    <div class="section-title">
+        <h2>Assignments</h2>
+        <hr>
+        <div class="section-content">
+            <div class="table">
+                <div class="row">
+                    <div class="cell"></div>
+                    <div class="cell"> Exercise </div>
+                    <div class="cell"> Topic (tentative)</div>
+                    <div class="cell"> Weight</div>
+                    <div class="cell">Due Date</div>
+                    <div class="cell">Solution </div>
+                </div>
+                <div class="row">
+                    <div class="cell">1</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='dummy.pdf') }}">Handout	</a></div>
+                    <div class="cell"> Relational Algebra and MySQL</div>
+                    <div class="cell">15%</div>
+                    <div class="cell">Part 1. Wednesday Feb. 1, 11.59pm, Submit to <a href=" https://markus.utsc.utoronto.ca/cscb20w22">MarkUs</a>
+                        UPDATED Part 2 and 3. For 5% bonus Saturday Feb. 11, 11.59pm or Friday Feb. 17, 11.59 Submit to <a href=" https://markus.utsc.utoronto.ca/cscb20w22">MarkUs</a> You can download a dumpfile for IMDB_SMALL here.
+                        To use it type mysql -u utorid -p  IMDB_SMALL.sql</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='dummy.pdf') }}">Solution Part 1</a></div>
+                </div>
+                <div class="row">
+                    <div class="cell">2</div>
+                    <div class="cell"><a href="{{ url_for('static', filename='dummy.pdf') }}" target="_blank">Handout a2.zip</a></div>
+                    <div class="cell">HTML, CSS, PHP</div>
+                    <div class="cell">15%	</div>
+                    <div class="cell">Part 1: Worth 50% Friday March. 10, 11.59pm, Submit to <a href=" https://markus.utsc.utoronto.ca/cscb20w22">MarkUs</a>
+                        Part 2: Worth 50% Friday March. 19, 11.59pm, Submit to <a href=" https://markus.utsc.utoronto.ca/cscb20w22">MarkUs</a></div>
+                    <div class="cell"></div>
+                </div>
+                <div class="row">
+                    <div class="cell">3</div>
+                    <div class="cell">New <a href="{{ url_for('static', filename='dummy.pdf') }}">Marking Scheme for A3 Handout</a></div>
+                    <div class="cell">Web Application and Database</div>
+                    <div class="cell">15%</div>
+                    <div class="cell">Friday March 31, 11.59pm</div>
+                    <div class="cell"></div>
+                </div>
+            </div>          
+        </div>  
+    </div>
+</div>
+<div class="section">
+    <div class="section-title">
+        <h2>FAQ - Assignment 1</h2>
+        <hr>
+    </div>
+    <div class="section-content">
+        <h4> Q. If the mysql portion asks for a director or actor without specifying which attributes, what should I return?</h4>
+        <h4> A. Return the first name, last name.</h4>
+    </div>
+</div>
+
+    
+{% endblock %}

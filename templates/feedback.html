@@ -1,0 +1,34 @@
+{% extends "template.html" %}
+{% block content %}
+        
+<form class="FORM" action="http://127.0.0.1:5000/feedback" method = "post">
+    <h1>Anonymous Feeback Form</h1><br>
+    
+    <label for="instructor">Choose instructor:</label>
+    <select name="instructor" id="instructor">
+        {% for instructor in instructor_options %}
+            <option value="{{ instructor.username }}">{{ instructor.username }}</option>
+        {% endfor %} 
+    </select>
+    <br><br>
+    <h5>What do you like about the instructor teaching?</h5><br>
+
+    <div class="feedback-ta">
+        
+        <textarea name="instructor_teaching" rows="10" cols="69" placeholder="Please enter feedback here"></textarea><br><br>
+        
+        <h5>What do you recommend the instructor to do to improve their teaching?</h5><br>
+        <textarea name="improve_teaching" rows="10" cols="69" placeholder="Please enter feedback here"></textarea><br><br>
+        
+        <h5>What do you like about the labs?</h5><br>
+        <textarea name="like_labs" rows="10" cols="69" placeholder="Please enter feedback here"></textarea><br>
+        
+        <h5>What do you recommend the lab instructors to do to improve their lab teaching?</h5><br>
+        <textarea name="improve_lab" rows="10" cols="69" placeholder="Please enter feedback here"></textarea><br>
+    </div>
+    
+    
+    <input type="submit" value="Submit">
+</form>
+    
+{% endblock %}

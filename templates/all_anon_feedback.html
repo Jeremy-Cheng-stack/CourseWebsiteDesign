@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="section">
+    <div class="section-title">
+        <h2>All Student Anonymous Feedback:</h2>
+        <hr>
+    </div>
+    <div class="section-content">
+        <div class="table">
+            <div class="row">
+                <div class="cell">Instructor</div>
+                <div class="cell">Instructor Teaching</div>
+                <div class="cell">Imporve Teaching</div>
+                <div class="cell">Lab Opinion</div>
+                <div class="cell">Improve Lab</div>
+            </div>
+            {% for feedback in query_feedback_result %}
+            <div class="row">
+                <div class="cell">{{ feedback.username }}</div>
+                <div class="cell">{{ feedback.instructor_teaching }}</div>
+                <div class="cell">{{ feedback.improve_teaching }}</div>
+                <div class="cell">{{ feedback.like_labs }}</div>
+                <div class="cell">{{ feedback.improve_lab }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

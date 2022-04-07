@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content = "width=device-width, initial-scale=1">
+        <title>CSCB20 - Introduction to Databases and Web Applications</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;1,200;1,300;1,400&display=swap" rel="stylesheet">
+        <script 
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+        </script>
+    </head>
+    <body>
+        <nav class="nav-bar">
+            <h4 class="nav-bar-title">
+                <a>CSCB20 - Intro. to Databases and Web Applications</a>
+            </h4>
+            </div>
+                <ul class="nav-links">
+                    {% if session.type == 0 %}
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="http://piazza.com/utoronto.ca/winter2022/cscb20h3" target="_blank">Piazza</a></li>
+                    <li><a href="https://markus.utsc.utoronto.ca/cscb20w22" target="_blank">Markus</a></li>
+                    <li><a href="{{ url_for('assignments') }}">Assignments</a></li>
+                    <li><a href="{{ url_for('static', filename='dummy.pdf') }}" target="_blank">Syllabus</a></li>
+                    <li><a href="{{ url_for('labs') }}">Labs</a></li>
+                    <li><a href="{{ url_for('team') }}">Course Team</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% elif session.type == 1 %}
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="http://piazza.com/utoronto.ca/winter2022/cscb20h3" target="_blank">Piazza</a></li>
+                    <li><a href="https://markus.utsc.utoronto.ca/cscb20w22" target="_blank">Markus</a></li>
+                    <li><a href="{{ url_for('assignments') }}">Assignments</a></li>
+                    <li><a href="{{ url_for('static', filename='dummy.pdf') }}" target="_blank">Syllabus</a></li>
+                    <li><a href="{{ url_for('labs') }}">Labs</a></li>
+                    <li><a href="{{ url_for('team') }}">Course Team</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content">
+            <div class="main-content">
+            
+                {% block content %}
+                {% endblock %}
+
+            </div>
+        </div>
+        
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div><a href="https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target="_blank">Faculty of Computer Science at UTSC</a></div>
+                <div>Designed by Jaelyn, Peter, and Jeremy</div>
+            </div>
+        </footer>
+    </body>
+</html>

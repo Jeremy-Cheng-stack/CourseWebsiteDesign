@@ -1,0 +1,71 @@
+{% extends "template.html" %}
+{% block content %}
+
+{% if session.name %}
+{% if session.type == 0 %}
+<div>
+    <h1>Welcome {{ session.name }} </h1>
+</div>
+<div class="section">
+    <div class="section-title">
+        <h2>Student's portal</h2>
+        <hr>
+    </div>
+    <div class="section-content">
+        <h4>Click <a href="{{ url_for('student_grades') }}">here</a> to check your grades.</h4>
+        <h4>Click <a href="{{ url_for('feedback') }}">here</a> to submit an anonymous feedback form.</h4>
+        <h4>Click <a href="{{ url_for('remark_request') }}">here</a> to submit a remark request.</h4>
+    </div>
+</div>
+<div class="section">
+    <div class="section-title">
+        <h2>Course Description</h2>
+        <hr>
+    </div>
+    <div class="section-content">
+        <h4>A practical introduction to databases and Web app development. Databases: terminology and applications;
+            creating, querying and updating databases; the entity-relationship model for database design. Web documents
+            and applications: static and interactive documents; Web servers and dynamic server-generated content; Web
+            application development and interface with databases.</h4>
+        <h4>Prerequisite Some experience with programming in an imperative language such as Python, Java or C.</h4>
+        <h4>Exclusion This course may not be taken after - or concurrently with - any C- or D-level CSC course.</h4>
+        <h4>Syllabus <a href="{{ url_for('static', filename='dummy.pdf') }}" target="_blank">PDF</a></h4>
+    </div>
+</div>
+<div class="section">
+    <div class="section-title">
+        <h2>Instructor</h2>
+        <hr>
+    </div>
+    <div class="section-content">
+        <h4>Dr. Anna Bretscher</h4>
+        <h4>Email: bretscher@utsc.utoronto.ca</h4>
+        <h4>Phone: (416) 208-4745</h4>
+        <h4>Lectures: Mondays 9:15-11:00 in HW 216</h4>
+        <h4>Office Hours: W 11:00-12:00</h4>
+    </div>
+</div>
+{% else %}
+<div>
+    <h1>Welcome {{ session.name }} </h1>
+</div>
+<div class="section">
+    <div class="section-title">
+        <h2>Instructor's portal</h2>
+        <hr>
+    </div>
+    <div class="section-content">
+        <h4>Click <a href="{{ url_for('student_grades') }}">here</a> to view student grades.</h4>
+        <h4>Click <a href="{{ url_for('add_student_grade') }}">here</a> to add student grades.</h4>
+        <h4>Click <a href="{{ url_for('all_anon_feedback') }}">here</a> to view all the anonymous feedbacks.</h4>
+        <h4>Click <a href="{{ url_for('all_regrade_requests') }}">here</a> to view all the regrade requests.</h4>
+    </div>
+</div>
+{% endif %}
+{% else %}
+<div>
+    <h1>Welcome</h1>
+    <h3>Please login/register in order to access the CSCB20 course website.</h3>
+</div>
+{% endif %}
+{% endblock %}

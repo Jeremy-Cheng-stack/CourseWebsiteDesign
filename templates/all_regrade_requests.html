@@ -1,0 +1,33 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="section">
+    <div class="section-title">
+        <h2>All Remark Requests:</h2>
+        <hr>
+    </div>
+    <div class="section-content">
+        <div class="table">
+            <div class="row">
+                <div class="cell">Student Name</div>
+                <div class="cell">Request Type</div>
+                <div class="cell">Request Detail</div>
+                <div class="cell">Closed / Opened</div>
+                <div class="cell"></div>
+            </div>
+            {% for request in query_regrades_result %}
+                <form class="row" action="/all_regrade_requests" method = "post">
+                    <div class="cell"><input type="hidden" name="remark_username" value="{{ request.username }}">{{ request.username }}</input></div>
+                    <div class="cell"><input type="hidden" name="remark_request_type" value="{{ request.request_type }}">{{ request.request_type }}</input></div>
+                    <div class="cell"><input type="hidden" name="remark_request_detail" value="{{ request.request_detail }}">{{ request.request_detail }}</input></div>
+                    <div class="cell">{{ request.closed_tf }}</div>
+                    <div class="cell">            
+                        <input type="submit" value="Mark Closed">
+                    </div>
+                </form>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

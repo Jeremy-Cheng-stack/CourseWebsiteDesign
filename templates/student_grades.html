@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% block content %}
+
+<div class="section">
+    <div class="section-title">
+        <h2>All Student Grades:</h2>
+        <hr>
+    </div>
+    <div class="section-content">
+        <div class="table">
+            <div class="row">
+                <div class="cell">Student Name</div>
+                <div class="cell">Assignment</div>
+                <div class="cell">Midterm</div>
+                <div class="cell">Lab</div>
+                <div class="cell">Final</div>
+            </div>
+            {% for grades in query_grades_result %}
+            <div class="row">
+                <div class="cell">{{ grades.username }}</div>
+                <div class="cell">{{ grades.assignment }}</div>
+                <div class="cell">{{ grades.midterm }}</div>
+                <div class="cell">{{ grades.lab }}</div>
+                <div class="cell">{{ grades.final }}</div>
+            </div>
+            {% endfor %} 
+        </div>
+    </div>
+</div>
+
+{% endblock %}

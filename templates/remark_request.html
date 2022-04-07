@@ -1,0 +1,64 @@
+
+{% extends "template.html" %}
+{% block content %}
+        
+<div class="section">
+    <div class="section-title">
+        <h2>Previous Remark Request:</h2>
+        <hr>
+    </div>
+
+    <div class="section-content">
+        <div class="table">
+            <div class="row">
+                <div class="cell">Student Name</div>
+                <div class="cell">Request Type</div>
+                <div class="cell">Request Detail</div>
+                <div class="cell">Closed / Opened</div>
+            </div>
+            {% for remark in query_remarks %}
+            <div class="row">
+                <div class="cell">{{ remark.username }}</div>
+                <div class="cell">{{ remark.request_type }}</div>
+                <div class="cell">{{ remark.request_detail }}</div>
+                <div class="cell">{{ remark.closed_tf }}</div>
+            </div>
+            {% endfor %} 
+        </div>
+    </div>
+</div>
+
+
+<div class="section">
+    <div class="section-title">
+        <h2>Remark Request Form</h2>
+        <hr>
+    </div>
+
+    <div class="section-content">
+        <form class="FORM" action="/remark_request" method = "post">
+
+            <label for="request_type">Choose Remark Request Type:</label>
+            <select name="request_type" id="request_type">
+                    <option value="assignment">Assignment</option>
+                    <option value="midterm">Midterm</option>
+                    <option value="final">Final</option>
+                    <option value="lab">Lab</option>
+            </select>
+
+            <br>
+
+            <h5>Username: {{session.name}}</h5><br>
+
+            <div class="feedback-ta">
+                <h5>Please enter Remark Request Details here. </h5><br>
+                <textarea name="request_detail" rows="10" cols="69" placeholder="Please enter Remark Request Details here.">
+                </textarea><br><br>
+            </div>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
