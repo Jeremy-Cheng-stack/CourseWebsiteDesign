@@ -1,6 +1,6 @@
 # Course Website Re-designed
 
-This is the final project built for my class Introduction to Databases and Web Applications at UofT where we re-create a course website with amore appealing design. This project was built in groups of three.
+This is the final project built for my class at UofT where we re-create a course website with amore appealing design. This project was built in groups of three.
 
 Built with Flask, HTML, CSS, SQLAlchemy, SQLite
 
