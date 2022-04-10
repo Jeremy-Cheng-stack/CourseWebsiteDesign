@@ -22,6 +22,10 @@ $ source venv/bin/activate
 $ pip3 install -r requirements.txt
 ```
 
+The program can be executed with the following command:
+```
+$ python3 app.py
+```
 Test dummy accounts:
 For student, username: student1
              password: student1
